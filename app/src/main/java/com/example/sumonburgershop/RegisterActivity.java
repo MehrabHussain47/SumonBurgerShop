@@ -46,14 +46,12 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                // Validate Gmail address
                 if (!email.matches("^(cse)_\\d{16}@lus.ac.bd$")) {
                     editTextEmail.setError("Enter a valid Email address");
                     return;
                 }
 
-                // Validate password
-                if (!password.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$")) {
+                if (!password.matches("^(?=.[a-z])(?=.[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$")) {
                     editTextPassword.setError("Password must include capital and small letters, numbers, and be at least 8 characters");
                     return;
                 }
