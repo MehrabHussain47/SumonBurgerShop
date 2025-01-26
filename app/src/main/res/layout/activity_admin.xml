@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_image"
+        android:contentDescription="@string/background_image"
+        android:alpha="0.5" />
+
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:text="Welcome Admin!! What kind of operation do you want to perform?"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+    <Button
+        android:id="@+id/buttonInsert"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewWelcome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Insert"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/colorButtonInsert"/> <!-- Replace colorButtonInsert with your desired color -->
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonInsert"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Update"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/colorButtonUpdate"/> <!-- Replace colorButtonUpdate with your desired color -->
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonUpdate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Delete"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/colorButtonDelete"/> <!-- Replace colorButtonDelete with your desired color -->
+
+    <Button
+        android:id="@+id/buttonView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonDelete"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="View"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/colorButtonView"/> <!-- Replace colorButtonView with your desired color -->
+
+</RelativeLayout>
