@@ -36,20 +36,25 @@ public class RegisterActivity extends AppCompatActivity {
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                String username = editTextUsername.getText().toString();
-                String email = editTextEmail.getText().toString();
-                String password = editTextPassword.getText().toString();
-                String confirmPassword = editTextConfirmPassword.getText().toString();
+                String username = editTextUsername.getText().toString().trim();
+                String email = editTextEmail.getText().toString().trim();
+                String password = editTextPassword.getText().toString().trim();
+                String confirmPassword = editTextConfirmPassword.getText().toString().trim();
 
                 if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    editTextEmail.setError("Enter a valid email address");
+                // Validate Gmail address
+                if (!email.matches("^(cse)_\\d{16}@lus.ac.bd$")) {
+                    editTextEmail.setError("Enter a valid Email address");
+                    return;
+                }
+
+                // Validate password
+                if (!password.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$")) {
+                    editTextPassword.setError("Password must include capital and small letters, numbers, and be at least 8 characters");
                     return;
                 }
 
@@ -90,4 +95,3 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 }
-
