@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "962053379603",
+    "project_id": "sumonburgershop",
+    "storage_bucket": "sumonburgershop.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962053379603:android:f759f1967dafd1c3d091e6",
+        "android_client_info": {
+          "package_name": "com.example.sumonburgershop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTo-aB5ucyIrOcHgVXi4FC9K5_WgBp6y0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
