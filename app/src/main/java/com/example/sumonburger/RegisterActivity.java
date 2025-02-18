@@ -45,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
+//                if (!email.matches("^(cse)_\\d{16}@lus.ac.bd$"))
                 if (!email.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$")) {
                     editTextEmail.setError("Enter a valid Email address");
                     return;
