@@ -1,4 +1,4 @@
-package com.example.sumonburgershop;
+package com.example.sumonburger;
 
 import android.content.ContentValues;
 import android.content.Context;

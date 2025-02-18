@@ -1,4 +1,4 @@
-package com.example.sumonburgershop;
+package com.example.sumonburger;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -21,6 +21,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+
+import com.example.sumonburgershop.R;
 
 public class UpdateActivity extends AppCompatActivity {
 

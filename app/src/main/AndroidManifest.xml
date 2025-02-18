@@ -10,28 +10,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SumonBurgerShop"
+        android:theme="@style/Theme.SumonBurger"
         tools:targetApi="31">
         <activity
-            android:name=".ViewActivity"
+            android:name="com.example.sumonburger.ViewActivity"
             android:exported="false" />
         <activity
-            android:name=".UpdateActivity"
+            android:name="com.example.sumonburger.UpdateActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.example.sumonburger.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".InsertActivity"
+            android:name="com.example.sumonburger.InsertActivity"
             android:exported="false" />
         <activity
-            android:name=".DeleteActivity"
+            android:name="com.example.sumonburger.DeleteActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminActivity"
+            android:name="com.example.sumonburger.AdminActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.sumonburger.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

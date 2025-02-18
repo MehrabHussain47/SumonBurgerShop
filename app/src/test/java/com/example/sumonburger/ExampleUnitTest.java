@@ -1,4 +1,4 @@
-package com.example.sumonburgershop;
+package com.example.sumonburger;
 
 import org.junit.Test;
 

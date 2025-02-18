@@ -1,16 +1,15 @@
-package com.example.sumonburgershop;
+package com.example.sumonburger;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sumonburgershop.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -46,12 +45,12 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (!email.matches("^(cse)_\\d{16}@lus.ac.bd$")) {
+                if (!email.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$")) {
                     editTextEmail.setError("Enter a valid Email address");
                     return;
                 }
 
-                if (!password.matches("^(?=.[a-z])(?=.[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$")) {
+                if (!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$")) {
                     editTextPassword.setError("Password must include capital and small letters, numbers, and be at least 8 characters");
                     return;
                 }

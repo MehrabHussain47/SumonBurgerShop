@@ -1,6 +1,5 @@
-package com.example.sumonburgershop;
+package com.example.sumonburger;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -14,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.sumonburgershop.R;
 
 public class DeleteActivity extends AppCompatActivity {
 
