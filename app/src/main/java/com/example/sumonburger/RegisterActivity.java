@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-// Start from here
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sumonburgershop.R;
