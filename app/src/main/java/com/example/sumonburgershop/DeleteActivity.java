@@ -1,5 +1,6 @@
-package com.example.sumonburger;
+package com.example.sumonburgershop;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -14,14 +15,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sumonburgershop.R;
-
 public class DeleteActivity extends AppCompatActivity {
 
     private EditText editTextSearchName, editTextName, editTextPrice, editTextQuantity;
     private ImageView imageViewPhoto;
     private Button buttonSearch, buttonDelete;
-    private DatabaseHelper dbHelper;
+    private com.example.sumonburgershop.DatabaseHelper dbHelper;
     private String encodedImage;
 
     @Override
@@ -29,7 +28,7 @@ public class DeleteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete);
 
-        dbHelper = new DatabaseHelper(this);
+        dbHelper = new com.example.sumonburgershop.DatabaseHelper(this);
 
         // Initializing UI components
         editTextSearchName = findViewById(R.id.editTextSearchName);
@@ -63,7 +62,7 @@ public class DeleteActivity extends AppCompatActivity {
         }
 
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + DatabaseHelper.ITEMS_TABLE + " WHERE NAME=?", new String[]{searchName});
+        Cursor cursor = db.rawQuery("SELECT * FROM " + com.example.sumonburgershop.DatabaseHelper.ITEMS_TABLE + " WHERE NAME=?", new String[]{searchName});
 
         if (cursor.moveToFirst()) {
             String name = cursor.getString(cursor.getColumnIndex("NAME"));
@@ -93,7 +92,7 @@ public class DeleteActivity extends AppCompatActivity {
     private void deleteProduct() {
         String name = editTextSearchName.getText().toString();
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        int result = db.delete(DatabaseHelper.ITEMS_TABLE, "NAME=?", new String[]{name});
+        int result = db.delete(com.example.sumonburgershop.DatabaseHelper.ITEMS_TABLE, "NAME=?", new String[]{name});
 
         if (result > 0) {
             Toast.makeText(this, "Product deleted successfully", Toast.LENGTH_SHORT).show();

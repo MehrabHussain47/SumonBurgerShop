@@ -1,5 +1,6 @@
-package com.example.sumonburger;
+package com.example.sumonburgershop;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,19 +16,17 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sumonburgershop.R;
-
 public class ViewActivity extends AppCompatActivity {
 
     private LinearLayout linearLayoutProducts;
-    private DatabaseHelper dbHelper;
+    private com.example.sumonburgershop.DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
 
-        dbHelper = new DatabaseHelper(this);
+        dbHelper = new com.example.sumonburgershop.DatabaseHelper(this);
         linearLayoutProducts = findViewById(R.id.linearLayoutProducts);
 
         displayProducts();

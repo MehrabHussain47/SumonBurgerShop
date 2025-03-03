@@ -1,4 +1,4 @@
-package com.example.sumonburger;
+package com.example.sumonburgershop;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -17,8 +17,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.sumonburgershop.R;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -29,14 +27,14 @@ public class InsertActivity extends AppCompatActivity {
     private ImageView imageViewPhoto;
     private Button buttonSelectPhoto, buttonInsertData;
     private String encodedImage;
-    private DatabaseHelper dbHelper;
+    private com.example.sumonburgershop.DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert);
 
-        dbHelper = new DatabaseHelper(this);
+        dbHelper = new com.example.sumonburgershop.DatabaseHelper(this);
 
         // Initializing UI components
         editTextName = findViewById(R.id.editTextName);

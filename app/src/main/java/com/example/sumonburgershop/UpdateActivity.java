@@ -1,4 +1,4 @@
-package com.example.sumonburger;
+package com.example.sumonburgershop;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -22,14 +22,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-import com.example.sumonburgershop.R;
-
 public class UpdateActivity extends AppCompatActivity {
 
     private EditText editTextSearchName, editTextName, editTextPrice, editTextQuantity;
     private ImageView imageViewPhoto;
     private Button buttonSearch, buttonUpdate, buttonSelectPhoto;
-    private DatabaseHelper dbHelper;
+    private com.example.sumonburgershop.DatabaseHelper dbHelper;
     private String encodedImage;
     private static final int PICK_IMAGE_REQUEST = 1;
     private String originalName;  // To store the original name
@@ -39,7 +37,7 @@ public class UpdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
 
-        dbHelper = new DatabaseHelper(this);
+        dbHelper = new com.example.sumonburgershop.DatabaseHelper(this);
 
         // Initializing UI components
         editTextSearchName = findViewById(R.id.editTextSearchName);
@@ -81,7 +79,7 @@ public class UpdateActivity extends AppCompatActivity {
         }
 
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + DatabaseHelper.ITEMS_TABLE + " WHERE NAME=?", new String[]{searchName});
+        Cursor cursor = db.rawQuery("SELECT * FROM " + com.example.sumonburgershop.DatabaseHelper.ITEMS_TABLE + " WHERE NAME=?", new String[]{searchName});
 
         if (cursor.moveToFirst()) {
             originalName = cursor.getString(cursor.getColumnIndexOrThrow("NAME"));
@@ -116,14 +114,14 @@ public class UpdateActivity extends AppCompatActivity {
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseHelper.ITEMS_COL_2, name);
-        contentValues.put(DatabaseHelper.ITEMS_COL_3, price);
-        contentValues.put(DatabaseHelper.ITEMS_COL_4, quantity);
+        contentValues.put(com.example.sumonburgershop.DatabaseHelper.ITEMS_COL_2, name);
+        contentValues.put(com.example.sumonburgershop.DatabaseHelper.ITEMS_COL_3, price);
+        contentValues.put(com.example.sumonburgershop.DatabaseHelper.ITEMS_COL_4, quantity);
         if (encodedImage != null) {
-            contentValues.put(DatabaseHelper.ITEMS_COL_5, encodedImage);
+            contentValues.put(com.example.sumonburgershop.DatabaseHelper.ITEMS_COL_5, encodedImage);
         }
 
-        int result = db.update(DatabaseHelper.ITEMS_TABLE, contentValues, "NAME=?", new String[]{originalName});
+        int result = db.update(com.example.sumonburgershop.DatabaseHelper.ITEMS_TABLE, contentValues, "NAME=?", new String[]{originalName});
         if (result > 0) {
             Toast.makeText(this, "Product updated successfully", Toast.LENGTH_SHORT).show();
             clearFields();
